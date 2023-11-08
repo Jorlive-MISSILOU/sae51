@@ -1,0 +1,37 @@
+Table data {
+  Id int [pk, increment]
+  marque varchar
+  OS varchar
+  DisqueGB int
+  RamGB int
+  DateAchat date
+  user varchar
+  LogInst json
+}
+
+Table logiciel {
+  NomLog varchar
+  Licence varchar
+  Version varchar
+  PcInst int
+  TechInst varchar
+}
+
+Table technicien {
+  NomTech varchar
+  DateInter date
+  PcInter int
+}
+
+Table maj {
+  PcMaj int
+  TechMaj varchar
+  DateMaj date
+}
+
+ref: data.Id > logiciel.PcInst
+ref: technicien.NomTech > logiciel.TechInst
+ref: data.LogInst > logiciel.NomLog
+ref: data.Id > maj.PcMaj
+ref: technicien.NomTech > maj.TechMaj
+ref: data.Id > technicien.PcInter 
