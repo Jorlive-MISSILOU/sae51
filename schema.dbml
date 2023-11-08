@@ -1,0 +1,55 @@
+Table ordi {
+  id int [pk, increment]
+  marqueId int
+  osId int
+  disqueGB int
+  ramGB int
+  dateAchat date
+  user varchar
+}
+
+Table marque {
+  id int [pk, increment]
+  nom varchar
+}
+
+Table os {
+  id int [pk, increment]
+  nom varchar
+}
+
+Table logiciel_instal {
+  id int [pk, increment]
+  ordiId int
+  logicielId int
+}
+
+Table logiciel {
+  id int [pk, increment]
+  nomLog varchar
+  licence varchar
+  version varchar
+  techInstal varchar
+}
+
+Table technicien {
+  id int [pk, increment]
+  nomTech varchar
+  dateInterv date
+  ordiInterv int
+}
+
+Table maj {
+  id int [pk, increment]
+  ordiMaj int
+  techMaj int
+  dateMaj date
+}
+
+ref: logiciel_instal.ordiId > ordi.id
+ref: logiciel_instal.logicielId > logiciel.id
+ref: ordi.marqueId > marque.id
+ref: ordi.osId > os.id
+ref: maj.ordiMaj > ordi.id
+ref: maj.techMaj > technicien.id
+ref: technicien.ordiInterv > ordi.id
