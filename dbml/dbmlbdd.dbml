@@ -1,4 +1,4 @@
-Table pc {
+Table ordi {
   id int [pk, increment]
   marqueId int
   osId int
@@ -20,37 +20,36 @@ Table os {
 
 Table logiciel_instal {
   id int [pk, increment]
-  pcId int
+  ordiId int
   logicielId int
-  techInstal int
 }
 
 Table logiciel {
   id int [pk, increment]
-  nom varchar
+  nomLog varchar
   licence varchar
   version varchar
+  techInstal varchar
 }
 
 Table technicien {
   id int [pk, increment]
-  nom varchar
+  nomTech varchar
   dateInterv date
-  pcInterv int
+  ordiInterv int
 }
 
 Table maj {
   id int [pk, increment]
-  pcMaj int
+  ordiMaj int
   techMaj int
   dateMaj date
 }
 
-ref: logiciel_instal.pcId > pc.id
+ref: logiciel_instal.ordiId > ordi.id
 ref: logiciel_instal.logicielId > logiciel.id
-ref: pc.marqueId > marque.id
-ref: pc.osId > os.id
-ref: maj.pcMaj > pc.id
+ref: ordi.marqueId > marque.id
+ref: ordi.osId > os.id
+ref: maj.ordiMaj > ordi.id
 ref: maj.techMaj > technicien.id
-ref: technicien.pcInterv > pc.id
-ref: logiciel_instal.techInstal > technicien.id
+ref: technicien.ordiInterv > ordi.id

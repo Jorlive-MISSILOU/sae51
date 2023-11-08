@@ -1,15 +1,6 @@
 #!/bin/bash
 #Script maitre du lancement de la BDD GestionParc
 
-#Installation de dbml2sql
-npm install -g @dbml/cli
-
-#Conversion dbml > sql
-dbml2sql dbmlbdd.dbml > dbmlbdd.sql
-
-#Installation de dbml-renderer
-npm i @softwaretechnik/dbml-renderer
-
 #Construction de l'image du serveur mysql
 ./buildsql.sh
 
