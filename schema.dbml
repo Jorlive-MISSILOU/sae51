@@ -48,8 +48,8 @@ Table maj {
 
 ref: logiciel_instal.ordiId > ordi.id
 ref: logiciel_instal.logicielId > logiciel.id
-ref: ordi.marque > marque.id
-ref: ordi.os > os.id
+ref: ordi.marqueId > marque.id
+ref: ordi.osId > os.id
 ref: maj.ordiMaj > ordi.id
 ref: maj.techMaj > technicien.id
 ref: technicien.ordiInterv > ordi.id
