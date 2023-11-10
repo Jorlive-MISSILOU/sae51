@@ -1,10 +1,11 @@
 #!/bin/bash
 
 docker run -d \
-        --name mysql_serv \
-        -p 3306:3306 \
-        --mount type=bind,source=$(pwd),target=/srv \
-        mysql_serv --local-infile=1 --secure-file-priv=""
+        --name sae51_mysql \
+        -e MYSQL_ROOT_PASSWORD=root \
+        -p 3307:3306 \
+        --mount type=bind,source=$(pwd)/shared,target=/srv \
+        sae51_mysql --local-infile=1 --secure-file-priv=""
 
 # Vérification
 if [ $? -eq 0 ]; then
