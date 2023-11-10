@@ -1,5 +1,5 @@
 Table pc {
-  id int [pk, increment]
+  id int [increment, primary key]
   marqueId int
   osId int
   disqueGB int
@@ -9,38 +9,38 @@ Table pc {
 }
 
 Table marque {
-  id int [pk, increment]
+  id int [increment, primary key]
   nom varchar
 }
 
 Table os {
-  id int [pk, increment]
+  id int [increment, primary key]
   nom varchar
 }
 
 Table logiciel_instal {
-  id int [pk, increment]
+  id int [increment, primary key]
   pcId int
   logicielId int
   techInstal int
 }
 
 Table logiciel {
-  id int [pk, increment]
+  id int [increment, primary key]
   nom varchar
   licence varchar
   version varchar
 }
 
 Table technicien {
-  id int [pk, increment]
+  id int [increment, primary key]
   nom varchar
   dateInterv date
   pcInterv int
 }
 
 Table maj {
-  id int [pk, increment]
+  id int [increment, primary key]
   pcMaj int
   techMaj int
   dateMaj date

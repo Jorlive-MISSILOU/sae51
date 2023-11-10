@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Creation et utilisation de la bdd sae51db  dans le fichier sql
-echo 'CREATE DATABASE IF NOT EXISTS sae51db; USE sae51db;' > sae51db.sql
+echo 'CREATE DATABASE IF NOT EXISTS sae51db; USE sae51db;' > srv/sae51db.sql
 chmod u+x sae51db.sql
 # Conversion du schema dbml en sql
 #dbml2sql sae51db.dbml >> sae51db.sql
 
 # correction du fichier render.js
-./svgrenderer.sh
+./srv/svgrenderer.sh
 
 # Vérification
 if [ $? -eq 0 ]; then
@@ -21,7 +21,7 @@ else
 fi
 
 
-for a in *.dbml
+for a in srv/*.dbml
 do
 	name=${a%.dbml}
 	echo "processing $name"
@@ -29,7 +29,6 @@ do
 	dbml2sql $a  >> $name.sql
 	# conversion dbml en svg
 	dbml-renderer -i $a -o $name.svg
-
 	# Conversion dbml en png
 	dbml-renderer -i $a -o $name.png
 done

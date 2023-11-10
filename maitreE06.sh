@@ -16,7 +16,7 @@
 echo -e "###########################################################################################"
 echo -e "###### Veuillez patienter 30 secondes, le temps que le serveur se lance completement ########"
 echo -e "############################################################################################"
-sleep 60
+sleep 40
 
 #Creation et remplissage de la bdd sae51db
 ./shared/sae51dbgestion.sh
