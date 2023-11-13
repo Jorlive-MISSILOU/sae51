@@ -14,9 +14,9 @@
 ./run_im_ubuntu1.sh
 
 echo -e "###########################################################################################"
-echo -e "###### Veuillez patienter 30 secondes, le temps que le serveur se lance completement ########"
+echo -e "###### Veuillez patienter 60 secondes, le temps que le serveur se lance completement ########"
 echo -e "############################################################################################"
-sleep 40
+sleep 60
 
 #Creation et remplissage de la bdd sae51db
 ./shared/sae51dbgestion.sh

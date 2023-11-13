@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Exécution du fichier createbdd.sql pour créer la base de données et les tables
-mysql -h 127.0.0.1 -P 3307 -u root -p'root' < createbdd.sql
+mysql -h 127.0.0.1 -P 3307 -u root -p'root' < shared/createbdd.sql
 
 if [ $? -eq 0 ]; then
         echo " ########################################################## \ \n
@@ -14,7 +14,7 @@ else
 fi
 
 #Chargement des données à partir des fichiers CSV
-mysql -h 127.0.0.1 -P 3307 -u root -p'root' GestionParc < fillbdd.sql
+mysql -h 127.0.0.1 -P 3307 -u root -p'root' GestionParc < shared/fillbdd.sql
 
 if [ $? -eq 0 ]; then
 	echo " ############################################################ \ \n

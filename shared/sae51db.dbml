@@ -5,17 +5,17 @@ Table pc {
   disqueGB int
   ramGB int
   dateAchat date
-  user varchar
+  user varchar(255)
 }
 
 Table marque {
   id int [increment, primary key]
-  nom varchar
+  nom varchar(255)
 }
 
 Table os {
   id int [increment, primary key]
-  nom varchar
+  nom varchar(255)
 }
 
 Table logiciel_instal {
@@ -27,14 +27,14 @@ Table logiciel_instal {
 
 Table logiciel {
   id int [increment, primary key]
-  nom varchar
-  licence varchar
-  version varchar
+  nom varchar(255)
+  licence varchar(255)
+  version varchar(255)
 }
 
 Table technicien {
   id int [increment, primary key]
-  nom varchar
+  nom varchar(255)
   dateInterv date
   pcInterv int
 }
