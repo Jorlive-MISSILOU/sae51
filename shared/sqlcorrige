@@ -1,50 +1,50 @@
 CREATE DATABASE IF NOT EXISTS sae51db; USE sae51db;
 CREATE TABLE "pc" (
   "id" INT AUTO_INCREMENT PRIMARY KEY,
-  "marqueId" int,
-  "osId" int,
-  "disqueGB" int,
-  "ramGB" int,
-  "dateAchat" date,
-  "user" varchar(255)
+  "marqueId" INT,
+  "osId" INT,
+  "disqueGB" INT,
+  "ramGB" INT,
+  "dateAchat" DATE,
+  "user" VARCHAR(255)
 );
 
 CREATE TABLE "marque" (
   "id" INT AUTO_INCREMENT PRIMARY KEY,
-  "nom" varchar(255)
+  "nom" VARCHAR(255)
 );
 
 CREATE TABLE "os" (
   "id" INT AUTO_INCREMENT PRIMARY KEY,
-  "nom" varchar(255)
+  "nom" VARCHAR(255)
 );
 
 CREATE TABLE "logiciel_instal" (
   "id" INT AUTO_INCREMENT PRIMARY KEY,
-  "pcId" int,
-  "logicielId" int,
-  "techInstal" int
+  "pcId" INT,
+  "logicielId" INT,
+  "techInstal" INT
 );
 
 CREATE TABLE "logiciel" (
   "id" INT AUTO_INCREMENT PRIMARY KEY,
-  "nom" varchar(255),
-  "licence" varchar(255),
-  "version" varchar(255)
+  "nom" VARCHAR(255),
+  "licence" VARCHAR(255),
+  "version" VARCHAR(255)
 );
 
 CREATE TABLE "technicien" (
   "id" INT AUTO_INCREMENT PRIMARY KEY,
-  "nom" varchar(255),
-  "dateInterv" date,
-  "pcInterv" int
+  "nom" VARCHAR(255),
+  "dateInterv" DATE,
+  "pcInterv" INT
 );
 
 CREATE TABLE "maj" (
   "id" INT AUTO_INCREMENT PRIMARY KEY,
-  "pcMaj" int,
-  "techMaj" int,
-  "dateMaj" date
+  "pcMaj" INT,
+  "techMaj" INT,
+  "dateMaj" DATE
 );
 
 ALTER TABLE "logiciel_instal" ADD FOREIGN KEY ("pcId") REFERENCES "pc" ("id");

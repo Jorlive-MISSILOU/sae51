@@ -1,49 +1,49 @@
 Table pc {
-  id int [increment, primary key]
-  marqueId int
-  osId int
-  disqueGB int
-  ramGB int
-  dateAchat date
-  user varchar(255)
+  id INT [increment, primary key]
+  marqueId INT
+  osId INT
+  disqueGB INT
+  ramGB INT
+  dateAchat DATE
+  user VARCHAR(255)
 }
 
 Table marque {
-  id int [increment, primary key]
-  nom varchar(255)
+  id INT [increment, primary key]
+  nom VARCHAR(255)
 }
 
 Table os {
-  id int [increment, primary key]
-  nom varchar(255)
+  id INT [increment, primary key]
+  nom VARCHAR(255)
 }
 
 Table logiciel_instal {
-  id int [increment, primary key]
-  pcId int
-  logicielId int
-  techInstal int
+  id INT [increment, primary key]
+  pcId INT
+  logicielId INT
+  techInstal INT
 }
 
 Table logiciel {
-  id int [increment, primary key]
-  nom varchar(255)
-  licence varchar(255)
-  version varchar(255)
+  id INT [increment, primary key]
+  nom VARCHAR(255)
+  licence VARCHAR(255)
+  version VARCHAR(255)
 }
 
 Table technicien {
-  id int [increment, primary key]
-  nom varchar(255)
-  dateInterv date
-  pcInterv int
+  id INT [increment, primary key]
+  nom VARCHAR(255)
+  dateInterv DATE
+  pcInterv INT
 }
 
 Table maj {
-  id int [increment, primary key]
-  pcMaj int
-  techMaj int
-  dateMaj date
+  id INT [increment, primary key]
+  pcMaj INT
+  techMaj INT
+  dateMaj DATE
 }
 
 ref: logiciel_instal.pcId > pc.id

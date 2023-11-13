@@ -21,4 +21,7 @@ sleep 60
 #Creation et remplissage de la bdd sae51db
 ./shared/sae51dbgestion.sh
 
+#Execution des requetes
+./sql/run_query.sh
+
 
